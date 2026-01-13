@@ -14,7 +14,7 @@ public class Array1 {
         int index = -1;
 
         for(int i = 0; i < num.length; i++){
-             if (num[i] == enteedNum);
+             if (num[i] == enteredNum);
              index = i;
              break;
         }
