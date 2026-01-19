@@ -1,3 +1,4 @@
+package week2;
 public class TwoDimentionalArray {
     public static void main(String[] args) {
         String[] clothTypes = { "Shirts", "Pants" };
