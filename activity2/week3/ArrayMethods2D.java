@@ -20,10 +20,13 @@ public class ArrayMethods2D {
     }
 
         public static double sumColumn (double[][] numbers, int column){
-            int sum = 0;
+            double sum = 0;
             for (int row = 0; row < numbers.length; row++) {
                 sum += numbers[row][column];
             }
             return sum;
+        }
+        public static double sumDiagonal(double[][] numbers) {
+
         }
 }
