@@ -25,7 +25,7 @@ public class Main {
 
         System.out.print("Enter email: ");
         sb.append(sc.nextLine());
-        sb.append("\n\n");
+        sb.append("\n");
 
         System.out.print("Enter phone number: ");
         sb.append(sc.nextInt());
