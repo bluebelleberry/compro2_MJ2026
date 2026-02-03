@@ -31,7 +31,7 @@ public class CsvGrade {
                     System.out.print("Enter subject: ");
                     subject[r] = sc.nextLine();
 
-                    System.out.print("Enter Prelim grades: ");
+                    System.out.print("Enter Prelim Grades: ");
                     try {
                         grades[r][0] = sc.nextDouble();
                     } catch (InputMismatchException e) {
@@ -39,7 +39,7 @@ public class CsvGrade {
                         sc.nextLine();
                     }
 
-                    System.out.print("Enter Midterm grades: ");
+                    System.out.print("Enter Midterm Grades: ");
                     try {
                         grades[r][1] = sc.nextDouble();
                     } catch (InputMismatchException e) {
@@ -47,7 +47,7 @@ public class CsvGrade {
                         sc.nextLine();
                     }
 
-                    System.out.print("Enter Final term grades: ");
+                    System.out.print("Enter Final Grades: ");
                     try {
                         grades[r][2] = sc.nextDouble();
                     } catch (InputMismatchException e) {
@@ -71,7 +71,7 @@ public class CsvGrade {
     public static void writeData() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("Subject,Prelim,Midterm,Final\n");
+        sb.append("Subject, Prelim, Midterm, Finals\n");
         for (int r = 0; r < subject.length; r++) {
             if (subject[r] == null)
                 break;
