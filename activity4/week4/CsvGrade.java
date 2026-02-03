@@ -5,13 +5,11 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CsvGrade {
-    static String[] subject;
-    static double[][] grades;
+    static String[] subject = new String[50];
+    static double[][] grades = new double[50][3];
+    static int subjectCount = 0;
 
     public static void main(String[] args) {
-        subject = new String[50];
-        grades = new double[50][3];
-
         Scanner sc = new Scanner(System.in);
         int choice;
 
@@ -25,42 +23,45 @@ public class CsvGrade {
             choice = sc.nextInt();
 
             if (choice == 1) {
-                for (int r = 0; r < subject.length; r++) {
-                    sc.nextLine();
 
-                    System.out.print("Enter subject: ");
-                    subject[r] = sc.nextLine();
-
-                    System.out.print("Enter Prelim Grades: ");
-                    try {
-                        grades[r][0] = sc.nextDouble();
-                    } catch (InputMismatchException e) {
-                        System.out.println("Invalid number");
-                        sc.nextLine();
-                    }
-
-                    System.out.print("Enter Midterm Grades: ");
-                    try {
-                        grades[r][1] = sc.nextDouble();
-                    } catch (InputMismatchException e) {
-                        System.out.println("Invalid number");
-                        sc.nextLine();
-                    }
-
-                    System.out.print("Enter Final Grades: ");
-                    try {
-                        grades[r][2] = sc.nextDouble();
-                    } catch (InputMismatchException e) {
-                        System.out.println("Invalid number");
-                        sc.nextLine();
-                    }
-
-                    sc.nextLine();
-                    System.out.println();
-
-                    writeData();
-                    break;
+                if (subjectCount >= subject.length) {
+                    System.out.println("Subject list is full");
+                    continue;
                 }
+
+                sc.nextLine();
+
+                System.out.print("Enter Subject: ");
+                subject[subjectCount] = sc.nextLine();
+
+                System.out.print("Enter Prelim Grades: ");
+                try {
+                    grades[subjectCount][0] = sc.nextDouble();
+                } catch (InputMismatchException e) {
+                    System.out.println("Invalid number");
+                    sc.nextLine();
+                }
+
+                System.out.print("Enter Midterm Grades: ");
+                try {
+                    grades[subjectCount][1] = sc.nextDouble();
+                } catch (InputMismatchException e) {
+                    System.out.println("Invalid number");
+                    sc.nextLine();
+                }
+
+                System.out.print("Enter Final Grades: ");
+                try {
+                    grades[subjectCount][2] = sc.nextDouble();
+                } catch (InputMismatchException e) {
+                    System.out.println("Invalid number");
+                    sc.nextLine();
+                }
+
+                subjectCount++;
+                sc.nextLine();
+                writeData();
+
             } else if (choice == 2) {
                 System.out.println("Bye Bye");
             }
@@ -70,15 +71,12 @@ public class CsvGrade {
 
     public static void writeData() {
         StringBuilder sb = new StringBuilder();
+        sb.append("\nSubject, Prelim, Midterm, Finals\n");
 
-        sb.append("Subject, Prelim, Midterm, Finals\n");
-        for (int r = 0; r < subject.length; r++) {
-            if (subject[r] == null)
-                break;
-
+        for (int r = 0; r < subjectCount; r++) {
             sb.append(subject[r]);
-            for (int c = 0; c < grades[r].length; c++) {
-                sb.append(",").append(grades[r][c]);
+            for (int c = 0; c < 3; c++) {
+                sb.append(", ").append(grades[r][c]);
             }
             sb.append("\n");
         }
@@ -92,3 +90,5 @@ public class CsvGrade {
         System.out.println(sb.toString());
     }
 }
+
+
