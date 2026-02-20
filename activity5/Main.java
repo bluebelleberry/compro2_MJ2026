@@ -1,9 +1,9 @@
 import java.io.*;
 import java.util.*;
 
-public class CsvUpdatedGrade {
+public class Main {
     static ArrayList<String[]> reportCard = new ArrayList<>();
-    static final String FILE_NAME = "ReportCard.csv";
+    static final String FILE_NAME = "grades.csv";
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

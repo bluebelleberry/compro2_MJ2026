@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class CsvGrade {
+public class Main {
     static String[] subject = new String[50];
     static double[][] grades = new double[50][3];
     static int subjectCount = 0;
@@ -81,7 +81,7 @@ public class CsvGrade {
             sb.append("\n");
         }
 
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("data.csv"))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("grades.csv"))) {
             bw.write(sb.toString());
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
