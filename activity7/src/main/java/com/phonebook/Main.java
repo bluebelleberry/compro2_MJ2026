@@ -38,7 +38,7 @@ public class Main {
 
                     System.out.println("your contacts are added successfully!");
                     break;
-                case 2:
+                case 2://search
                     System.out.print("Enter name to search: ");
                 case 3:
                     System.out.print("Enter name to remove: ");
@@ -47,9 +47,9 @@ public class Main {
                     pbservice.removeContact(removeName);
                     System.out.println("Contact removed (if it existed).");
                     break;
-                case 4:
-                case 5:
-                case 0:
+                case 4://display all
+                case 5:// save to csv
+                case 0:// exit
             }
         } catch (Exception e) {
             System.out.println("Error saving to file, " + e.getMessage());
