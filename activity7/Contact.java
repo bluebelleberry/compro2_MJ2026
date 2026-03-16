@@ -44,4 +44,8 @@ public class Contact {
         return name + "," + phoneNumber + "," + email;
     }
 
+    public String toString() {
+        return "Name: " + name + ", Phone: " + phoneNumber + ", Email: " + email;
+    }
+
 }
