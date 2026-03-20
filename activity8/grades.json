@@ -1,0 +1,34 @@
+{
+  "grades": [
+    {
+      "subject": "COMPRO2",
+      "prelim": 90,
+      "midterm": 90,
+      "final": 90
+    },
+    {
+      "subject": "OOP",
+      "prelim": 90,
+      "midterm": 91,
+      "final": 91
+    },
+    {
+      "subject": "DATSTRU",
+      "prelim": 0,
+      "midterm": 0,
+      "final": 0
+    },
+    {
+      "subject": "MMW",
+      "prelim": 0,
+      "midterm": 0,
+      "final": 0
+    },
+    {
+      "subject": "UTS",
+      "prelim": 0,
+      "midterm": 0,
+      "final": 0
+    }
+  ]
+}
