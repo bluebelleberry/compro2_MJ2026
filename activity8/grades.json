@@ -1,5 +1,3 @@
-{
-  "grades": [
     {
       "subject": "COMPRO2",
       "prelim": 90,
@@ -9,8 +7,8 @@
     {
       "subject": "OOP",
       "prelim": 90,
-      "midterm": 91,
-      "final": 91
+      "midterm": 90,
+      "final": 90
     },
     {
       "subject": "DATSTRU",
@@ -30,5 +28,3 @@
       "midterm": 0,
       "final": 0
     }
-  ]
-}

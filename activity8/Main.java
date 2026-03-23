@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class GradeSystem {
+public class Main {
 
     public static void main(String[] args) {
 
@@ -26,7 +26,7 @@ public class GradeSystem {
         while (mainLoop) {
 
             System.out.println("""
-                    
+
                     Main Menu
                     [ 1 ] Enter Grades
                     [ 2 ] Display Grades
@@ -43,7 +43,7 @@ public class GradeSystem {
                 while (subjectGrades) {
 
                     System.out.println("""
-                            
+
                             Enter Grades
                             [ 1 ] COMPRO2
                             [ 2 ] OOP
@@ -77,7 +77,7 @@ public class GradeSystem {
 
                         System.out.println("Grades saved!\n");
 
-                        
+                        writeJSON(subjects, grades);
                     }
 
                     else {
@@ -90,7 +90,7 @@ public class GradeSystem {
             else if (menuChoice == 2) {
 
                 System.out.println("""
-                        
+
                         Subject   Pre   Mid   Fin
                         """);
 
@@ -116,5 +116,35 @@ public class GradeSystem {
         }
     }
 
+    public static void writeJSON(String[] subjects, int[][] grades) {
 
+        StringBuilder json = new StringBuilder();
+
+        for (int i = 0; i < subjects.length; i++) {
+
+            json.append("    {\n");
+            json.append("      \"subject\": \"").append(subjects[i]).append("\",\n");
+            json.append("      \"prelim\": ").append(grades[i][0]).append(",\n");
+            json.append("      \"midterm\": ").append(grades[i][1]).append(",\n");
+            json.append("      \"final\": ").append(grades[i][2]).append("\n");
+            json.append("    }");
+
+            if (i < subjects.length - 1) {
+                json.append(",");
+            }
+
+            json.append("\n");
+        }
+
+        json.append("  ]\n");
+        json.append("}");
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("grades.json"))) {
+            bw.write(json.toString());
+        }
+
+        catch (IOException e) {
+            System.out.println("Error saving JSON: " + e.getMessage());
+        }
+    }
 }
