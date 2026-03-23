@@ -1,20 +1,48 @@
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
-public class HangmanGame {
+public class hangmanGame {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         // the words to guess
-        
+        String[] wordBank = loadWordsFromFile("words.txt");
+
         String[] players = new String[50];
         int[] scores = new int[50];
         int playerCount = 0;
         int round = 1;
-        boolean morePlayers;
+        boolean morePlayers = true;
 
         do {
-            String playerName = getPlayerName(input, round); // ask the user to enter their name
+
+            // sign in or sign up
+            System.out.println("1. Sign In");
+            System.out.println("2. Sign Up");
+            System.out.print("Choice: ");
+            int option = input.nextInt();
+            input.nextLine();
+
+            String playerName;
+
+            if (option == 1) {
+                System.out.print("Enter username: ");
+                playerName = input.nextLine();
+
+                if (!userExists(playerName)) {
+                    System.out.println("User not found, please sign up again");
+                    continue;
+                }
+
+            } else {
+                System.out.print("Create username: ");
+                playerName = input.nextLine();
+                saveUser(playerName);
+            }
+
             int score = playGame(wordBank, 5, 5, input); // one full game
+
+            saveScore(playerName, score);
 
             players[playerCount] = playerName;
             scores[playerCount] = score;
@@ -41,7 +69,7 @@ public class HangmanGame {
             }
         }
         // display the leaderboard
-        System.out.println("\n==== LEADERBOARD ====");
+        System.out.println("\nLEADERBOARD");
         for (int i = 0; i < playerCount; i++) {
             System.out.println(players[i] + " - " + scores[i] + " points");
         }
@@ -60,7 +88,8 @@ public class HangmanGame {
         String choice = input.nextLine().toLowerCase();
 
         // validating the choice for another game
-        while (choice.length() != 1 || !Character.isLetter(choice.charAt(0)) || (!choice.equals("y") && !choice.equals("n"))) {
+        while (choice.length() != 1 || !Character.isLetter(choice.charAt(0))
+                || (!choice.equals("y") && !choice.equals("n"))) {
             // ask the user to input again their answer
             System.out.print("Invalid input. Please enter y or n only: ");
             choice = input.nextLine().toLowerCase();
@@ -89,6 +118,8 @@ public class HangmanGame {
 
             System.out.print("\nEnter a letter in word " + new String(display) + " > ");
             String guessInput = input.next().toLowerCase();
+            input.nextLine();
+
             // validating the input guess
             if (guessInput.length() != 1) {
                 System.out.println("Invalid input Enter one letter lang po.");
@@ -123,7 +154,7 @@ public class HangmanGame {
             }
 
         }
-        //shows if the user completed the guess or if its game over
+        // shows if the user completed the guess or if its game over
         if (isWordFullyGuessed(display)) {
             System.out.println("\nCongratulations! You guessed the word " + word + "\n");
         } else {
@@ -211,5 +242,69 @@ public class HangmanGame {
             }
         }
         return currentScore;
+    }
+
+    // read random words from txt file
+    public static String[] loadWordsFromFile(String filename) {
+
+        List<String> words = new ArrayList<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                words.add(line.trim());
+            }
+
+        } catch (IOException e) {
+            System.out.println("Error reading words file.");
+        }
+
+        return words.toArray(new String[0]);
+    }
+
+    // check if existing user already registered
+    public static boolean userExists(String username) {
+
+        try (BufferedReader br = new BufferedReader(new FileReader("users.json"))) {
+
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                if (line.contains(username)) {
+                    return true;
+                }
+            }
+
+        } catch (IOException e) {
+            System.out.println("Error reading users.");
+        }
+
+        return false;
+    }
+
+    // save new user in json file
+    public static void saveUser(String username) {
+
+        try (FileWriter writer = new FileWriter("users.json", true)) {
+
+            writer.write("{\"username\":\"" + username + "\",\"score\":0}\n");
+
+        } catch (IOException e) {
+            System.out.println("Error saving user.");
+        }
+    }
+
+    // save user score
+    public static void saveScore(String username, int score) {
+
+        try (FileWriter writer = new FileWriter("users.json", true)) {
+
+            writer.write("{\"username\":\"" + username + "\",\"score\":" + score + "}\n");
+
+        } catch (IOException e) {
+            System.out.println("Error saving score.");
+        }
     }
 }
