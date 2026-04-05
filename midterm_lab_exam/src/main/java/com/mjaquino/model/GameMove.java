@@ -1,5 +1,5 @@
 package com.mjaquino.model;
-
+//abstract for all moves
 public abstract class GameMove {
     //data feilds
     private String moveName;

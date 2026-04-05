@@ -1,25 +1,29 @@
 package com.mjaquino.model;
-
+// the player during the game
 public class Player {
     //data feilds 
-    private String name;
+    private Account account;
     private int score;
     private GameMove currentMove;
 
-    public Player(String name) {
-        this.name = name;
+    public Player(Account account) {
+        this.account = account;
         this.score = 0;
     }
     
     //getters and setters 
-    public String getName() {
-        return name;
+    public Account getAccount() {
+        return account;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAccount(Account account) {
+        this.account = account;
     }
 
+    public String getUsername() {
+        return account.getUsername();
+    }
+    
     public int getScore() {
         return score;
     }

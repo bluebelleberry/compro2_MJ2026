@@ -1,7 +1,6 @@
 package com.mjaquino.model;
-
+// concrete subclass
 public class Paper extends GameMove {
-
     public Paper() {
         super("Paper");
     }

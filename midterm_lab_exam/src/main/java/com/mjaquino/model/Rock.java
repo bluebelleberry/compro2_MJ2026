@@ -1,7 +1,6 @@
 package com.mjaquino.model;
-
+// concrete subclass
 public class Rock extends GameMove {
-
     public Rock() {
         super("Rock");
     }

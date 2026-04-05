@@ -1,7 +1,6 @@
 package com.mjaquino.model;
-
+//concrete subclass
 public class Scissors extends GameMove {
-
     public Scissors() {
         super("Scissors");
     }
