@@ -9,7 +9,7 @@ import java.util.Scanner;
 // player side
 public class Client {
     public static void main(String[] args) {
-        String server = "192.168.100.14";
+        String server = "192.168.110.255";
         int port = 8000;
 
         try (

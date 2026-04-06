@@ -17,7 +17,7 @@ import java.util.List;
 // handles reading and writing to json file
 public class MatchResultService {
     // json file name
-    private static final String FILE_NAME = "playersMatchResult.json";
+    private static final String FILE_NAME = "data/playersMatchResult.json";
 
     public static List<Account> loadAccounts() {
         File file = new File(FILE_NAME);

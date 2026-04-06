@@ -70,7 +70,7 @@ public class Account {
         if (totalGames == 0) {
             winRate = 0.0;
         } else {
-            winRate = (double) wins / totalGames;
+            winRate = (double) wins * 100/ totalGames;
         }
     }
 }

@@ -1,0 +1,30 @@
+[
+  {
+    "username": "yana",
+    "password": "4567",
+    "wins": 7,
+    "losses": 3,
+    "winRate": 70.0
+  },
+  {
+    "username": "yala",
+    "password": "3789",
+    "wins": 3,
+    "losses": 7,
+    "winRate": 30.0
+  },
+  {
+    "username": "mj",
+    "password": "1234",
+    "wins": 4,
+    "losses": 6,
+    "winRate": 40.0
+  },
+  {
+    "username": "mel",
+    "password": "2345",
+    "wins": 6,
+    "losses": 4,
+    "winRate": 60.0
+  }
+]

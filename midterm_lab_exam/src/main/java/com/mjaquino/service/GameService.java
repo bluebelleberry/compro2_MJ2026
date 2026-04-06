@@ -31,11 +31,7 @@ public class GameService {
                 %s chose %s
                 %s chose %s
                 %s
-                """.formatted(
-                roundResult,
-                player1.getUsername(), move1.getMoveName(),
-                player2.getUsername(), move2.getMoveName(),
-                scoreBoard
+                """.formatted(roundResult, player1.getUsername(), move1.getMoveName(), player2.getUsername(), move2.getMoveName(), scoreBoard
         );
     }
 }
