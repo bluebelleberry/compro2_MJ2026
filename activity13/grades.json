@@ -1,0 +1,18 @@
+{
+  "subject": "COMPRO 2",
+  "prelim": 89,
+  "midterm": 90,
+  "final": 91
+},
+{
+  "subject": "OOP",
+  "prelim": 90,
+  "midterm": 91,
+  "final": 92
+},
+{
+  "subject": "DATSTRU",
+  "prelim": 89,
+  "midterm": 90,
+  "final": 93
+}
