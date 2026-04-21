@@ -7,18 +7,18 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class Server {
+    private static final int PORT = 8000;
+    private static List<ClientHandler> clients = new ArrayList<>();
     public static void main(String[] args) {
         int port = 8000;
 
-        //1: start server socket
         try(ServerSocket server = new ServerSocket(port)) {
             System.out.println("Waiting for clients to be connected...");
             
-            //3: Accept clients
+  
             Socket client1 = server.accept(); //wait for client to connect
             
-            //create in/out streams from this server to 
-            // the client by using the same socket object that represents the accepted/connected client
+    
             PrintWriter out1 = new PrintWriter(client1.getOutputStream(), true);
             BufferedReader in1 = new BufferedReader(new InputStreamReader(client1.getInputStream()));
 
@@ -41,21 +41,30 @@ public class Server {
             out2.println("READY");
 
             while (true) {
-                String user1Message = in1.readLine();
+                Socket client = serverSocket.accept();
+                System.out.println("New client connected: " + client.getInetAddress().getHostAddress());
+
+                ClientHandler clientHandler = new ClientHandler(client);
+                synchronized(clients) {
+                    clients.add(handler);
+                }
+                new Thread(clientHandler).start();
+
+                /* String user1Message = in1.readLine();
                 if(user1Message == null) break;
                 out2.println(user1Message);
 
                 String user2Message = in2.readLine();
                 if(user2Message == null) break;
                 out1.println(user2Message);
-            }
+            } 
             
-            out1.close();
+            out1.close();                                                                                                                                                                                                                                                                                                           
             out2.close();
             in1.close();
             in2.close();
             client1.close();
-            client2.close();
+            client2.close();  */
 
         } catch (IOException e) {
 
