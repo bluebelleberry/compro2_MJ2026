@@ -3,12 +3,11 @@ import java.net.*;
 import java.util.Scanner;
 
 public class Client {
+    private static final String HOST = "192.168.100.14";
+    private static final int PORT = 8000;
     public static void main(String[] args) {
-        String server = "192.168.100.14";
-        int port = 8000;
-
         try (
-            Socket socket = new Socket(server, port);
+            Socket socket = new Socket(HOST, PORT);
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             Scanner sc = new Scanner(System.in);
