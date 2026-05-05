@@ -17,9 +17,11 @@ public class WeatherFetcher {
         double lat = scanner.nextDouble();
 
         // build the request API URL with user input
-        String url = "https://www.7timer.info/bin/astro.php" + "?lon" + lon + "&lat" + lat
-                + "&ac=0&unit=metric&output=json";
-
+        String url = "https://www.7timer.info/bin/astro.php"
+            + "?lon=" + lon
+            + "&lat=" + lat
+            + "&ac=0&unit=metric&output=json";
+            
         // create HTTP client and request using the GET method
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
