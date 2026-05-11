@@ -1,5 +1,5 @@
 package com.mjaquino.models;
 
-public class Question {
+public abstract class Question {
     
 }

@@ -1,10 +1,10 @@
 package com.mjaquino.models;
 
-class MultipleChoiceQuestion extends Question {
+class WordBankQuestion extends Question {
     private String questionText;
     private String[] options;
 
-    public MultipleChoiceQuestion(String questionText, String[] options) {
+    public WordBankQuestion(String questionText, String[] options) {
         this.questionText = questionText;
         this.options = options;
     }
