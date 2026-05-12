@@ -1,20 +1,49 @@
 package com.mjaquino.models;
 
-class WordBankQuestion extends Question {
-    private String questionText;
-    private String[] options;
+import java.util.ArrayList;
 
-    public WordBankQuestion(String questionText, String[] options) {
-        this.questionText = questionText;
-        this.options = options;
+public class WordBankQuestion extends Question {
+
+    private ArrayList<String> wordBankChoices;
+    private int answerIndex;
+
+    public WordBankQuestion(String questionText,
+                            ArrayList<String> wordBankChoices,
+                            int answerIndex,
+                            int timeLimit) {
+
+        super(questionText, "word_bank", timeLimit);
+
+        this.wordBankChoices = wordBankChoices;
+        this.answerIndex = answerIndex;
     }
 
-    public String getQuestionText() {
-        return questionText;
+    @Override
+    public void displayQuestion() {
+
+        System.out.println("\n[Word Bank]");
+        System.out.println(questionText);
+
+        System.out.println("\nWord Bank:");
+
+        for (String choice : wordBankChoices) {
+            System.out.println("- " + choice);
+        }
+
+        System.out.println("Time Limit: " + timeLimit + " seconds");
     }
 
-    public String[] getOptions() {
-        return options;
+    @Override
+    public boolean checkAnswer(String userAnswer) {
+
+        String correctAnswer =
+                wordBankChoices.get(answerIndex);
+
+        return userAnswer.trim()
+                .equalsIgnoreCase(correctAnswer);
     }
-    
+
+    public ArrayList<String> getWordBankChoices() {
+        return wordBankChoices;
+    }
 }
