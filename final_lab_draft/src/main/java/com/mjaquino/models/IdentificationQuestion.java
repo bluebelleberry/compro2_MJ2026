@@ -1,14 +1,30 @@
 package com.mjaquino.models;
 
-class IdentificationQuestion extends Question {
-    private String questionText;
+public class IdentificationQuestion extends Question {
 
-    public IdentificationQuestion(String questionText) {
-        this.questionText = questionText;
+    private String answer;
+
+    public IdentificationQuestion(String questionText,
+                                  String answer,
+                                  int timeLimit) {
+
+        super(questionText, "identification", timeLimit);
+
+        this.answer = answer;
     }
 
-    public String getQuestionText() {
-        return questionText;
+    @Override
+    public void displayQuestion() {
+
+        System.out.println("\n[Identification]");
+        System.out.println(questionText);
+        System.out.println("Time Limit: " + timeLimit + " seconds");
     }
-    
+
+    @Override
+    public boolean checkAnswer(String userAnswer) {
+
+        return userAnswer.trim()
+                .equalsIgnoreCase(answer);
+    }
 }
