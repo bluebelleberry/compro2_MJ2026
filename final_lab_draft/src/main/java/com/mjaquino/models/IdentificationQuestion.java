@@ -1,18 +1,23 @@
 package com.mjaquino.models;
 
 public class IdentificationQuestion extends Question {
-
+    // data fields
     private String answer;
 
-    public IdentificationQuestion(String questionText,
-                                  String answer,
-                                  int timeLimit) {
+    // constructor
+    public IdentificationQuestion(int questionId, String questionText, String answer, int timeLimit) {
 
-        super(questionText, "identification", timeLimit);
+        super(questionId, questionText, "identification", timeLimit);
 
         this.answer = answer;
     }
 
+    // getters
+    public String getAnswer() {
+        return answer;
+    }
+
+    // display question and check answer
     @Override
     public void displayQuestion() {
 
@@ -24,7 +29,6 @@ public class IdentificationQuestion extends Question {
     @Override
     public boolean checkAnswer(String userAnswer) {
 
-        return userAnswer.trim()
-                .equalsIgnoreCase(answer);
+        return userAnswer.trim().equalsIgnoreCase(answer);
     }
 }

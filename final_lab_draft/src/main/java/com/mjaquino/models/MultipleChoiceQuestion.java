@@ -2,41 +2,41 @@ package com.mjaquino.models;
 
 import java.util.ArrayList;
 
-public class EnumerationQuestion extends Question {
+public class MultipleChoiceQuestion extends Question {
+    // data fields
+    private ArrayList<String> choices;
+    private String answer;
 
-    private ArrayList<String> answers;
+    // constructor
+    public MultipleChoiceQuestion(int questionId, String questionText, ArrayList<String> choices, String answer, int timeLimit) {
 
-    public EnumerationQuestion(String questionText,
-                               ArrayList<String> answers,
-                               int timeLimit) {
+        super(questionId, questionText, "multiple_choice", timeLimit);
 
-        super(questionText, "enumeration", timeLimit);
-
-        this.answers = answers;
+        this.choices = choices;
+        this.answer = answer;
     }
 
+    // display question and check answer
     @Override
     public void displayQuestion() {
 
-        System.out.println("\n[Enumeration]");
+        System.out.println("\n[Multiple Choice]");
         System.out.println(questionText);
+
+        for (String choice : choices) {
+            System.out.println(choice);
+        }
+
         System.out.println("Time Limit: " + timeLimit + " seconds");
     }
 
     @Override
     public boolean checkAnswer(String userAnswer) {
-
-        for (String answer : answers) {
-
-            if (answer.equalsIgnoreCase(userAnswer.trim())) {
-                return true;
-            }
-        }
-
-        return false;
+        return userAnswer.trim().equalsIgnoreCase(answer);
     }
 
-    public ArrayList<String> getAnswers() {
-        return answers;
+    // getters
+    public ArrayList<String> getChoices() {
+        return choices;
     }
 }

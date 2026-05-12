@@ -3,21 +3,19 @@ package com.mjaquino.models;
 import java.util.ArrayList;
 
 public class WordBankQuestion extends Question {
-
+    // data fields
     private ArrayList<String> wordBankChoices;
     private int answerIndex;
 
-    public WordBankQuestion(String questionText,
-                            ArrayList<String> wordBankChoices,
-                            int answerIndex,
-                            int timeLimit) {
-
-        super(questionText, "word_bank", timeLimit);
+    public WordBankQuestion(int questionId, String questionText, ArrayList<String> wordBankChoices, int answerIndex, int timeLimit) {
+    
+        super(questionId, questionText, "word_bank", timeLimit);
 
         this.wordBankChoices = wordBankChoices;
         this.answerIndex = answerIndex;
     }
 
+    // display question and check answer
     @Override
     public void displayQuestion() {
 
@@ -39,8 +37,7 @@ public class WordBankQuestion extends Question {
         String correctAnswer =
                 wordBankChoices.get(answerIndex);
 
-        return userAnswer.trim()
-                .equalsIgnoreCase(correctAnswer);
+        return userAnswer.trim().equalsIgnoreCase(correctAnswer);
     }
 
     public ArrayList<String> getWordBankChoices() {

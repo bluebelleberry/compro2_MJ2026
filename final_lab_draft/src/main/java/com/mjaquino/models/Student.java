@@ -3,14 +3,14 @@ package com.mjaquino.models;
 public class Student {
     // data feilds
     private String studentId;
-    private String name;
+    private String fullName;
     private int score;
     private boolean submitted;
 
     // constructor 
-    public Student(String studentId, String name) {
+    public Student(String studentId, String fullName) {
         this.studentId = studentId;
-        this.name = name;
+        this.fullName = fullName;
         this.score = 0;
         this.submitted = false;
     }
@@ -19,8 +19,8 @@ public class Student {
         return studentId;
     }
 
-    public String getName() {
-        return name;
+    public String getFullName() {
+        return fullName;
     }
 
     public int getScore() {

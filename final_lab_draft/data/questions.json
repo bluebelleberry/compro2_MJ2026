@@ -1,0 +1,272 @@
+{
+  "questions": [
+    {
+      "type": "identification",
+      "question": "What is the oldest city in the Philippines?",
+      "answer": "Cebu City"
+    },
+    {
+      "type": "identification",
+      "question": "Who is known as the Father of the Philippine Revolution?",
+      "answer": "Andres Bonifacio"
+    },
+    {
+      "type": "identification",
+      "question": "What is the national tree of the Philippines?",
+      "answer": "Narra"
+    },
+    {
+      "type": "identification",
+      "question": "What is the deepest lake in the Philippines?",
+      "answer": "Lake Lanao"
+    },
+    {
+      "type": "identification",
+      "question": "What is the legislative body of the Philippines called?",
+      "answer": "Congress"
+    },
+
+    {
+      "type": "enumeration",
+      "question": "Name the three stars represented in the Philippine flag.",
+      "answer": ["Luzon", "Visayas", "Mindanao"]
+    },
+    {
+      "type": "enumeration",
+      "question": "Give three neighboring countries of the Philippines.",
+      "answer": ["Japan", "Malaysia", "Indonesia"]
+    },
+    {
+      "type": "enumeration",
+      "question": "Name three national symbols of the Philippines.",
+      "answer": ["Sampaguita", "Narra", "Philippine Eagle"]
+    },
+    {
+      "type": "enumeration",
+      "question": "Give three former Presidents of the Philippines before 2000.",
+      "answer": ["Corazon Aquino", "Fidel Ramos", "Joseph Estrada"]
+    },
+    {
+      "type": "enumeration",
+      "question": "Name the three main government branches in the Philippines.",
+      "answer": ["Executive", "Legislative", "Judicial"]
+    },
+
+    {
+      "type": "multiple_choice",
+      "question": "Which Philippine province is known as the Rice Granary of the Philippines?",
+      "choices": ["A. Nueva Ecija", "B. Palawan", "C. Bohol", "D. Batangas"],
+      "answer": "A"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "What is the smallest province in the Philippines?",
+      "choices": ["A. Batanes", "B. Camiguin", "C. Siquijor", "D. Marinduque"],
+      "answer": "B"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Who wrote Noli Me Tangere?",
+      "choices": ["A. Emilio Jacinto", "B. Andres Bonifacio", "C. Jose Rizal", "D. Apolinario Mabini"],
+      "answer": "C"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Which body of water separates Luzon from Taiwan?",
+      "choices": ["A. Sulu Sea", "B. Bashi Channel", "C. Celebes Sea", "D. Visayan Sea"],
+      "answer": "B"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Which city is known as the Queen City of the South?",
+      "choices": ["A. Davao", "B. Cebu", "C. Iloilo", "D. Bacolod"],
+      "answer": "B"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "What year did the Philippines gain independence from Spain?",
+      "choices": ["A. 1896", "B. 1898", "C. 1901", "D. 1946"],
+      "answer": "B"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Who was the first woman president of the Philippines?",
+      "choices": ["A. Gloria Macapagal Arroyo", "B. Miriam Defensor Santiago", "C. Corazon Aquino", "D. Imelda Marcos"],
+      "answer": "C"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Which mountain is considered the highest in the Philippines?",
+      "choices": ["A. Mt. Pulag", "B. Mt. Apo", "C. Mt. Arayat", "D. Mt. Banahaw"],
+      "answer": "B"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Which Philippine agency is responsible for volcanic eruption monitoring?",
+      "choices": ["A. PAGASA", "B. PHIVOLCS", "C. DOH", "D. NDRRMC"],
+      "answer": "B"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "What is the official residence of the President of the Philippines?",
+      "choices": ["A. Senate Building", "B. Batasang Pambansa", "C. Malacañang Palace", "D. Supreme Court"],
+      "answer": "C"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Which hero is known as the Brains of the Katipunan?",
+      "choices": ["A. Emilio Aguinaldo", "B. Andres Bonifacio", "C. Apolinario Mabini", "D. Emilio Jacinto"],
+      "answer": "D"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Which place is famous for the Banaue Rice Terraces?",
+      "choices": ["A. Ifugao", "B. Benguet", "C. Kalinga", "D. Abra"],
+      "answer": "A"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Which sea is located between Visayas and Mindanao?",
+      "choices": ["A. Sulu Sea", "B. Visayan Sea", "C. Celebes Sea", "D. Bohol Sea"],
+      "answer": "D"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "What is the national language of the Philippines?",
+      "choices": ["A. English", "B. Filipino", "C. Spanish", "D. Tagalog"],
+      "answer": "B"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Which branch of government interprets laws?",
+      "choices": ["A. Executive", "B. Judicial", "C. Legislative", "D. Local Government"],
+      "answer": "B"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Which Philippine agency is responsible for public health?",
+      "choices": ["A. DOH", "B. DepEd", "C. DTI", "D. DFA"],
+      "answer": "A"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Which department handles basic education in the Philippines?",
+      "choices": ["A. CHED", "B. TESDA", "C. DepEd", "D. DOST"],
+      "answer": "C"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Which city is the capital of the Philippines?",
+      "choices": ["A. Quezon City", "B. Manila", "C. Makati", "D. Pasig"],
+      "answer": "B"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Which Philippine island group is located in the southern part of the country?",
+      "choices": ["A. Luzon", "B. Visayas", "C. Mindanao", "D. Palawan"],
+      "answer": "C"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Which Philippine agency manages foreign affairs?",
+      "choices": ["A. DFA", "B. DILG", "C. DENR", "D. DOLE"],
+      "answer": "A"
+    }
+  ],
+
+  "wordBankChoices": [
+    "Bohol",
+    "Jose Rizal",
+    "Intramuros",
+    "Panagbenga",
+    "Peso",
+    "Mindanao",
+    "Mactan",
+    "Malolos",
+    "Tomas",
+    "Mayon Volcano",
+    "Representatives",
+    "1081",
+    "PAGASA",
+    "Alcaraz",
+    "Supreme Court"
+  ],
+
+  "wordBankQuestions": [
+    {
+      "type": "word_bank",
+      "question": "Complete: The Philippine national hero executed in Bagumbayan is ____________.",
+      "answer": 1
+    },
+    {
+      "type": "word_bank",
+      "question": "Complete: The famous shrine where the blood compact happened is in ____________.",
+      "answer": 0
+    },
+    {
+      "type": "word_bank",
+      "question": "Complete: The first Philippine republic was established in ____________.",
+      "answer": 7
+    },
+    {
+      "type": "word_bank",
+      "question": "Complete: The active volcano near Albay famous for its perfect cone shape is ____________.",
+      "answer": 9
+    },
+    {
+      "type": "word_bank",
+      "question": "Complete: The Philippine currency is called the Philippine ____________.",
+      "answer": 4
+    },
+    {
+      "type": "word_bank",
+      "question": "Complete: The law that declared Martial Law in 1972 was Proclamation No. ____________.",
+      "answer": 11
+    },
+    {
+      "type": "word_bank",
+      "question": "Complete: The oldest university in the Philippines is University of Santo ____________.",
+      "answer": 8
+    },
+    {
+      "type": "word_bank",
+      "question": "Complete: The Philippine eagle is found mostly in ____________.",
+      "answer": 5
+    },
+    {
+      "type": "word_bank",
+      "question": "Complete: The Walled City in Manila is called ____________.",
+      "answer": 2
+    },
+    {
+      "type": "word_bank",
+      "question": "Complete: The national scientist known for geothermal energy studies is Arturo ____________.",
+      "answer": 13
+    },
+    {
+      "type": "word_bank",
+      "question": "Complete: The famous flower festival in Baguio is called ____________.",
+      "answer": 3
+    },
+    {
+      "type": "word_bank",
+      "question": "Complete: The place where Magellan was defeated by Lapu-Lapu is ____________.",
+      "answer": 6
+    },
+    {
+      "type": "word_bank",
+      "question": "Complete: The Philippine Congress is composed of the Senate and the House of ____________.",
+      "answer": 10
+    },
+    {
+      "type": "word_bank",
+      "question": "Complete: The government agency for weather forecasting is called ____________.",
+      "answer": 12
+    },
+    {
+      "type": "word_bank",
+      "question": "Complete: The highest court in the Philippines is the ____________.",
+      "answer": 14
+    }
+  ]
+}

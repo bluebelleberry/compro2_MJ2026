@@ -2,18 +2,23 @@ package com.mjaquino.models;
 
 public abstract class Question {
     // data feilds
+    protected int questionId;
     protected String questionText;
     protected String type;
     protected int timeLimit;
 
     // constructor
-    public Question(String questionText,
-                    String type,
-                    int timeLimit) {
+    public Question(int questionId, String questionText, String type, int timeLimit) {
 
+        this.questionId = questionId;
         this.questionText = questionText;
         this.type = type;
         this.timeLimit = timeLimit;
+    }
+
+    // getters
+    public int getQuestionId() {
+        return questionId;
     }
 
     public String getQuestionText() {
@@ -28,6 +33,7 @@ public abstract class Question {
         return timeLimit;
     }
 
+    // abstract methods
     public abstract void displayQuestion();
 
     public abstract boolean checkAnswer(String userAnswer);
