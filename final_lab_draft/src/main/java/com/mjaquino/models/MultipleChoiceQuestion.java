@@ -1,20 +1,42 @@
 package com.mjaquino.models;
 
-class MultipleChoiceQuestion extends Question {
-    private String questionText;
-    private String[] options;
+import java.util.ArrayList;
 
-    public MultipleChoiceQuestion(String questionText, String[] options) {
-        this.questionText = questionText;
-        this.options = options;
+public class EnumerationQuestion extends Question {
+
+    private ArrayList<String> answers;
+
+    public EnumerationQuestion(String questionText,
+                               ArrayList<String> answers,
+                               int timeLimit) {
+
+        super(questionText, "enumeration", timeLimit);
+
+        this.answers = answers;
     }
 
-    public String getQuestionText() {
-        return questionText;
+    @Override
+    public void displayQuestion() {
+
+        System.out.println("\n[Enumeration]");
+        System.out.println(questionText);
+        System.out.println("Time Limit: " + timeLimit + " seconds");
     }
 
-    public String[] getOptions() {
-        return options;
+    @Override
+    public boolean checkAnswer(String userAnswer) {
+
+        for (String answer : answers) {
+
+            if (answer.equalsIgnoreCase(userAnswer.trim())) {
+                return true;
+            }
+        }
+
+        return false;
     }
-    
+
+    public ArrayList<String> getAnswers() {
+        return answers;
+    }
 }
