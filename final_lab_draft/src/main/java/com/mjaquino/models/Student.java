@@ -5,16 +5,16 @@ public class Student {
     private String studentId;
     private String name;
     private int score;
+    private boolean submitted;
 
-    
-
-    // constructor
+    // constructor 
     public Student(String studentId, String name) {
         this.studentId = studentId;
         this.name = name;
         this.score = 0;
+        this.submitted = false;
     }
-    // getters
+    
     public String getStudentId() {
         return studentId;
     }
@@ -27,24 +27,15 @@ public class Student {
         return score;
     }
 
-    // setters
-    public void setStudentId(String studentId) {
-        this.studentId = studentId;
+    public boolean isSubmitted() {
+        return submitted;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-    public void setScore(int score) {
-        this.score = score;
+    public void addScore(int points) {
+        score += points;
     }
 
-    //display student info
-    @Override
-    public String toString() {
-        return "Student ID: " + studentId +
-               "\nName: " + name +
-               "\nScore: " + score;
+    public void setSubmitted(boolean submitted) {
+        this.submitted = submitted;
     }
 }
-
