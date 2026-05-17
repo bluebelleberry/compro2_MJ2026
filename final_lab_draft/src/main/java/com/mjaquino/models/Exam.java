@@ -1,56 +1,112 @@
 package com.mjaquino.models;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Exam {
     // data fields
-    private ArrayList<Question> questions;
-    private int timeLimit;
+    private String title;
+    private String password;
+    private int durationMinutes;
+    private int maxStudents;
+    private int passingPercentage;
+    private List<Question> questions;
+
+    // empty constructor
+    public Exam() {
+    }
 
     // constructor
-    public Exam(ArrayList<Question> questions, int timeLimit) {
+    public Exam(
+            String title,
+            String password,
+            int durationMinutes,
+            int maxStudents,
+            int passingPercentage,
+            List<Question> questions
+    ) {
+        this.title = title;
+        this.password = password;
+        this.durationMinutes = durationMinutes;
+        this.maxStudents = maxStudents;
+        this.passingPercentage = passingPercentage;
         this.questions = questions;
-        this.timeLimit = timeLimit;
     }
 
-    //  add question
-    public void addQuestion(Question q) {
-        questions.add(q);
+    // getters and setters
+    public String getTitle() {
+        return title;
     }
 
-    // remove question by ID
-    public void deleteQuestion(int questionId) {
-        questions.removeIf(q -> q.getQuestionId() == questionId);
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    // search question by ID
-    public Question searchQuestion(int questionId) {
-        for (Question q : questions) {
-            if (q.getQuestionId() == questionId) {
-                return q;
-            }
-        }
-        return null;
+    public String getPassword() {
+        return password;
     }
 
-    // edit question text by ID
-    public void editQuestion(int questionId, String newText) {
-        Question q = searchQuestion(questionId);
-        if (q != null) {
-            q.questionText = newText;
-        }
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    // shuffle questions
-    public void shuffleQuestions() {
-    
-    }
-    // getters
-    public int getTimeLimit() {
-        return timeLimit;
+    public int getDurationMinutes() {
+        return durationMinutes;
     }
 
-    public ArrayList<Question> getQuestions() {
+    public void setDurationMinutes(int durationMinutes) {
+        this.durationMinutes = durationMinutes;
+    }
+
+    public int getMaxStudents() {
+        return maxStudents;
+    }
+
+    public void setMaxStudents(int maxStudents) {
+        this.maxStudents = maxStudents;
+    }
+
+    public int getPassingPercentage() {
+        return passingPercentage;
+    }
+
+    public void setPassingPercentage(int passingPercentage) {
+        this.passingPercentage = passingPercentage;
+    }
+
+    public List<Question> getQuestions() {
         return questions;
+    }
+
+    public void setQuestions(List<Question> questions) {
+        this.questions = questions;
+    }
+    // computing total points
+    public int getTotalPoints() {
+        int total = 0;
+        for(Question question : questions) {
+            total += question.getPoints();
+        }
+        return total;
+    }
+
+    @Override
+    public String toString() {
+
+        return "Exam: " + title
+
+                + "\nDuration: "
+                + durationMinutes + " minutes"
+
+                + "\nTotal Questions: "
+                + questions.size()
+
+                + "\nTotal Points: "
+                + getTotalPoints()
+
+                + "\nPassing Percentage: "
+                + passingPercentage + "%"
+
+                + "\nMaximum Students: "
+                + maxStudents;
     }
 }

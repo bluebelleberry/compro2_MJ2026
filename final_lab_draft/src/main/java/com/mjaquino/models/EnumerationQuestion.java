@@ -1,40 +1,96 @@
 package com.mjaquino.models;
 
-import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class EnumerationQuestion extends Question {
-    // data fields
-    private ArrayList<String> answers;
+    // data field
+    private List<String> answers;
 
-    public EnumerationQuestion(int questionId, String questionText, ArrayList<String> answers, int timeLimit) {
+    // empty constructor
+    public EnumerationQuestion() {
+    }
 
-        super(questionId, questionText, "enumeration", timeLimit);
-
+    // constructor
+    public EnumerationQuestion(
+            String question,
+            List<String> answers,
+            int points) {
+        super(QuestionType.ENUMERATION, question, points);
         this.answers = answers;
     }
 
-    // display question and check answer
+    // getter
+    public List<String> getAnswers() {
+        return answers;
+    }
+
+    // setter
+    public void setAnswers(List<String> answers) {
+        this.answers = answers;
+    }
+
+    // check if answer are correct
+    @Override
+    public boolean checkAnswer(Object userAnswer) {
+        if (userAnswer == null) {
+            return false;
+        }
+        if (!(userAnswer instanceof List<?>)) {
+            return false;
+        }
+        List<String> inputAnswers = (List<String>) userAnswer;
+        Set<String> correctSet = new HashSet<>();
+        Set<String> inputSet = new HashSet<>();
+        // converting to lowercase 
+        for (String answer : answers) {
+            correctSet.add(answer.trim().toLowerCase());
+        }
+        for (String input : inputAnswers) {
+            inputSet.add(input.trim().toLowerCase());
+        }
+        return correctSet.equals(inputSet);
+    }
+
+    // display the question
     @Override
     public void displayQuestion() {
-
-        System.out.println("\n[Enumeration]");
-        System.out.println(questionText);
-        System.out.println("Time Limit: " + timeLimit + " seconds");
+        System.out.println(getQuestion());
+        System.out.println(
+                "(Separate answers with commas)");
     }
 
+    // get correct answers
     @Override
-    public boolean checkAnswer(String userAnswer) {
+    public Object getCorrectAnswer() {
+        return answers;
+    }
 
+    // computes score
+    @Override
+    public int getScore(Object userAnswer) {
+        if (userAnswer == null) {
+            return 0;
+        }
+        if (!(userAnswer instanceof List<?>)) {
+            return 0;
+        }
+        List<String> inputAnswers = (List<String>) userAnswer;
+        Set<String> correctSet = new HashSet<>();
+        Set<String> inputSet = new HashSet<>();
         for (String answer : answers) {
-            if (answer.equalsIgnoreCase(userAnswer.trim())) {
-                return true;
+            correctSet.add(answer.trim().toLowerCase());
+        }
+        for (String input : inputAnswers) {
+            inputSet.add(input.trim().toLowerCase());
+        }
+        int correctCount = 0;
+        for (String input : inputSet) {
+            if (correctSet.contains(input)) {
+                correctCount++;
             }
         }
-        return false;
-    }
-
-    // getters
-    public ArrayList<String> getAnswers() {
-        return answers;
+        return correctCount;
     }
 }

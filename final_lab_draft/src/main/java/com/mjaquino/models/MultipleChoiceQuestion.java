@@ -1,42 +1,81 @@
 package com.mjaquino.models;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class MultipleChoiceQuestion extends Question {
     // data fields
-    private ArrayList<String> choices;
+    private List<String> choices;
     private String answer;
-
+    // empty constructor
+    public MultipleChoiceQuestion() {
+    }
     // constructor
-    public MultipleChoiceQuestion(int questionId, String questionText, ArrayList<String> choices, String answer, int timeLimit) {
-
-        super(questionId, questionText, "multiple_choice", timeLimit);
-
+    public MultipleChoiceQuestion(
+            String question,
+            List<String> choices,
+            String answer,
+            int points) {
+        super(QuestionType.MULTIPLE_CHOICE, question, points);
         this.choices = choices;
         this.answer = answer;
     }
 
-    // display question and check answer
+    // getters and setters
+    public List<String> getChoices() {
+        return choices;
+    }
+    
+    public void setChoices(List<String> choices) {
+        this.choices = choices;
+    }
+    
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
+
+    // check the answer
+    @Override
+    public boolean checkAnswer(Object userAnswer) {
+        if (userAnswer == null) {
+            return false;
+        }
+        String input = userAnswer.toString().trim().toUpperCase();
+        if (input.isEmpty()) {
+            return false;
+        }
+        if (answer.equalsIgnoreCase(input)) {
+            return true;
+        }
+        int index = input.charAt(0) - 'A';
+
+        if (index >= 0 && index < choices.size()) {
+            return choices.get(index).equalsIgnoreCase(answer);
+        }
+        return false;
+    }
+    // display questions
     @Override
     public void displayQuestion() {
-
-        System.out.println("\n[Multiple Choice]");
-        System.out.println(questionText);
-
+        System.out.println(getQuestion());
+        char letter = 'A';
         for (String choice : choices) {
-            System.out.println(choice);
+            System.out.println(letter + ". " + choice);
+            letter++;
         }
-
-        System.out.println("Time Limit: " + timeLimit + " seconds");
     }
 
+    // get the correct answers
     @Override
-    public boolean checkAnswer(String userAnswer) {
-        return userAnswer.trim().equalsIgnoreCase(answer);
+    public Object getCorrectAnswer() {
+        return answer;
     }
-
-    // getters
-    public ArrayList<String> getChoices() {
-        return choices;
+    // get the scores
+    @Override
+    public int getScore(Object userAnswer) {
+        return checkAnswer(userAnswer) ? getPoints() : 0;
     }
 }

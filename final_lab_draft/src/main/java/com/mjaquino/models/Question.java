@@ -1,40 +1,56 @@
 package com.mjaquino.models;
 
 public abstract class Question {
-    // data feilds
-    protected int questionId;
-    protected String questionText;
-    protected String type;
-    protected int timeLimit;
+    // data fields
+    protected QuestionType type;
+    protected String question;
+    protected int points;
+
+    // empty constructor
+    public Question() {
+    }
 
     // constructor
-    public Question(int questionId, String questionText, String type, int timeLimit) {
-
-        this.questionId = questionId;
-        this.questionText = questionText;
+    public Question(QuestionType type, String question, int points) {
         this.type = type;
-        this.timeLimit = timeLimit;
+        this.question = question;
+        this.points = points;
     }
 
     // getters
-    public int getQuestionId() {
-        return questionId;
-    }
-
-    public String getQuestionText() {
-        return questionText;
-    }
-
-    public String getType() {
+    public QuestionType getType() {
         return type;
     }
 
-    public int getTimeLimit() {
-        return timeLimit;
+    public String getQuestion() {
+        return question;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    // setters
+    public void setType(QuestionType type) {
+        this.type = type;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
     }
 
     // abstract methods
-    public abstract void displayQuestion();
 
-    public abstract boolean checkAnswer(String userAnswer);
+    // checking student's answer is correct
+    public abstract boolean checkAnswer(Object userAnswer);
+    // display questions
+    public abstract void displayQuestion();
+    // get the correct answer
+    public abstract Object getCorrectAnswer();
+    // get the score
+    public abstract int getScore(Object userAnswer);
 }

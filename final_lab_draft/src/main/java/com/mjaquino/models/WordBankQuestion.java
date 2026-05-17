@@ -1,46 +1,76 @@
 package com.mjaquino.models;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class WordBankQuestion extends Question {
-    // data fields
-    private ArrayList<String> wordBankChoices;
-    private int answerIndex;
 
-    public WordBankQuestion(int questionId, String questionText, ArrayList<String> wordBankChoices, int answerIndex, int timeLimit) {
-    
-        super(questionId, questionText, "word_bank", timeLimit);
+    private List<String> choices;
+    private String answer;
 
-        this.wordBankChoices = wordBankChoices;
-        this.answerIndex = answerIndex;
+    public WordBankQuestion() {
     }
 
-    // display question and check answer
+    public WordBankQuestion(
+            String question,
+            List<String> choices,
+            String answer,
+            int points) {
+        super(QuestionType.WORD_BANK, question, points);
+        this.choices = choices;
+        this.answer = answer;
+    }
+
+    public List<String> getChoices() {
+        return choices;
+    }
+
+    public void setChoices(List<String> choices) {
+        this.choices = choices;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
+
     @Override
-    public void displayQuestion() {
+    public boolean checkAnswer(Object userAnswer) {
 
-        System.out.println("\n[Word Bank]");
-        System.out.println(questionText);
-
-        System.out.println("\nWord Bank:");
-
-        for (String choice : wordBankChoices) {
-            System.out.println("- " + choice);
+        if (userAnswer == null) {
+            return false;
         }
 
-        System.out.println("Time Limit: " + timeLimit + " seconds");
+        String input = userAnswer.toString().trim();
+
+        if (input.isEmpty()) {
+            return false;
+        }
+
+        return answer.trim().equalsIgnoreCase(input);
     }
 
     @Override
-    public boolean checkAnswer(String userAnswer) {
-
-        String correctAnswer =
-                wordBankChoices.get(answerIndex);
-
-        return userAnswer.trim().equalsIgnoreCase(correctAnswer);
+    public int getScore(Object userAnswer) {
+        return checkAnswer(userAnswer) ? getPoints() : 0;
     }
 
-    public ArrayList<String> getWordBankChoices() {
-        return wordBankChoices;
+    @Override
+    public void displayQuestion() {
+        System.out.println(getQuestion());
+        System.out.println("Word Bank:");
+
+        for (String choice : choices) {
+            System.out.print("[ " + choice + " ] ");
+        }
+
+        System.out.println();
+    }
+
+    @Override
+    public Object getCorrectAnswer() {
+        return answer;
     }
 }
