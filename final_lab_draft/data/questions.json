@@ -1,7 +1,7 @@
 {
   "title": "Philippine History Quiz",
   "password": "HISTORY2026",
-  "durationMinutes": 2,
+  "durationMinutes": 5,
   "maxStudents": 30,
   "passingPercentage": 75,
 

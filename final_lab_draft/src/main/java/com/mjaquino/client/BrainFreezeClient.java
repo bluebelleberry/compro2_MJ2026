@@ -65,6 +65,7 @@ public class BrainFreezeClient {
             System.out.println(message);
 
             if(!authenticated) {
+                System.out.println("   Possible reasons:\n" + " - Wrong password\n" + " - Student ID already used\n" + " - Quiz session is no longer available\n" + " - Maximum students reached");
                 socket.close();
                 return;
             }
@@ -172,7 +173,7 @@ public class BrainFreezeClient {
                 if(question instanceof EnumerationQuestion) {
 
                     System.out.println("Instruction         : Separate your answers with commas.");
-                    System.out.println("Answer              : ");
+                    System.out.print("Answer              : ");
 
                     String line = scanner.nextLine();
 
@@ -185,7 +186,7 @@ public class BrainFreezeClient {
                 } else if(question instanceof MultipleChoiceQuestion) {
 
                     System.out.println("Instruction         : Choose the best answer.");
-                    System.out.println("Answer              : ");
+                    System.out.print("Answer              : ");
 
                     String answer = scanner.nextLine().trim().toUpperCase();
 
@@ -194,7 +195,7 @@ public class BrainFreezeClient {
                 } else if(question instanceof WordBankQuestion) {
 
                     System.out.println("Instruction         : Type the correct word from the word bank.");
-                    System.out.println("Answer              : ");
+                    System.out.print("Answer              : ");
 
                     String answer = scanner.nextLine();
 
@@ -203,7 +204,7 @@ public class BrainFreezeClient {
                 } else {
 
                     System.out.println("Instruction         : Type your answer clearly, wrong spelling is wrong.");
-                    System.out.println("Answer              : ");
+                    System.out.print("Answer              : ");
 
                     String answer = scanner.nextLine();
 
