@@ -1,0 +1,196 @@
+[
+  {
+    "studentId": "2510754",
+    "fullName": "Meliscent Aquino",
+    "timeIn": "15:14:51.069759100",
+    "timeOut": "15:22:17.836483200",
+    "quizDate": "2026-05-20",
+    "score": 13,
+    "totalPoints": 19,
+    "correctCount": 7,
+    "incorrectCount": 3,
+    "ranking": 1,
+    "passingPercentage": 75,
+    "reviews": [
+      {
+        "question": "Give three neighboring countries of the Philippines.",
+        "submittedAnswer": [
+          "malaysia",
+          "indonesia",
+          "hsfiuwhfiw"
+        ],
+        "correctAnswer": [
+          "Japan",
+          "Malaysia",
+          "Indonesia"
+        ],
+        "scoreEarned": 2,
+        "points": 3
+      },
+      {
+        "question": "Name the three stars represented in the Philippine flag.",
+        "submittedAnswer": [
+          "luzon",
+          "visayas",
+          "mindanao"
+        ],
+        "correctAnswer": [
+          "Luzon",
+          "Visayas",
+          "Mindanao"
+        ],
+        "scoreEarned": 3,
+        "points": 3
+      },
+      {
+        "question": "What is the oldest city in the Philippines?",
+        "submittedAnswer": "cebu",
+        "correctAnswer": "Cebu",
+        "scoreEarned": 2,
+        "points": 2
+      },
+      {
+        "question": "Who is known as the Father of the Philippine Revolution?",
+        "submittedAnswer": "andres bonfacio",
+        "correctAnswer": "Andres Bonifacio",
+        "scoreEarned": 0,
+        "points": 2
+      },
+      {
+        "question": "The famous shrine where the blood compact happened is in ____________.",
+        "submittedAnswer": "bohol",
+        "correctAnswer": "Bohol",
+        "scoreEarned": 2,
+        "points": 2
+      },
+      {
+        "question": "The Walled City in Manila is called ____________.",
+        "submittedAnswer": "intamuros",
+        "correctAnswer": "Intramuros",
+        "scoreEarned": 0,
+        "points": 2
+      },
+      {
+        "question": "The Philippine national hero executed in Bagumbayan is ____________.",
+        "submittedAnswer": "jose rizal",
+        "correctAnswer": "Jose Rizal",
+        "scoreEarned": 2,
+        "points": 2
+      },
+      {
+        "question": "Who wrote Noli Me Tangere?",
+        "submittedAnswer": "D",
+        "correctAnswer": "Jose Rizal",
+        "scoreEarned": 1,
+        "points": 1
+      },
+      {
+        "question": "Which body of water separates Luzon from Taiwan?",
+        "submittedAnswer": "C",
+        "correctAnswer": "Bashi Channel",
+        "scoreEarned": 0,
+        "points": 1
+      },
+      {
+        "question": "Which city is known as the Queen City of the South?",
+        "submittedAnswer": "B",
+        "correctAnswer": "Cebu",
+        "scoreEarned": 1,
+        "points": 1
+      }
+    ]
+  },
+  {
+    "studentId": "9492929",
+    "fullName": "Amelia Fernandez",
+    "timeIn": "15:16:36.020249800",
+    "timeOut": "15:24:01.536013800",
+    "quizDate": "2026-05-20",
+    "score": 4,
+    "totalPoints": 19,
+    "correctCount": 2,
+    "incorrectCount": 8,
+    "ranking": 2,
+    "passingPercentage": 75,
+    "reviews": [
+      {
+        "question": "The Walled City in Manila is called ____________.",
+        "submittedAnswer": "hoshfs",
+        "correctAnswer": "Intramuros",
+        "scoreEarned": 0,
+        "points": 2
+      },
+      {
+        "question": "The Philippine national hero executed in Bagumbayan is ____________.",
+        "submittedAnswer": "jose rizal",
+        "correctAnswer": "Jose Rizal",
+        "scoreEarned": 2,
+        "points": 2
+      },
+      {
+        "question": "The famous shrine where the blood compact happened is in ____________.",
+        "submittedAnswer": "bohol",
+        "correctAnswer": "Bohol",
+        "scoreEarned": 2,
+        "points": 2
+      },
+      {
+        "question": "Who is known as the Father of the Philippine Revolution?",
+        "submittedAnswer": "",
+        "correctAnswer": "Andres Bonifacio",
+        "scoreEarned": 0,
+        "points": 2
+      },
+      {
+        "question": "What is the oldest city in the Philippines?",
+        "submittedAnswer": "",
+        "correctAnswer": "Cebu",
+        "scoreEarned": 0,
+        "points": 2
+      },
+      {
+        "question": "Name the three stars represented in the Philippine flag.",
+        "submittedAnswer": "",
+        "correctAnswer": [
+          "Luzon",
+          "Visayas",
+          "Mindanao"
+        ],
+        "scoreEarned": 0,
+        "points": 3
+      },
+      {
+        "question": "Give three neighboring countries of the Philippines.",
+        "submittedAnswer": "",
+        "correctAnswer": [
+          "Japan",
+          "Malaysia",
+          "Indonesia"
+        ],
+        "scoreEarned": 0,
+        "points": 3
+      },
+      {
+        "question": "Which city is known as the Queen City of the South?",
+        "submittedAnswer": "",
+        "correctAnswer": "Cebu",
+        "scoreEarned": 0,
+        "points": 1
+      },
+      {
+        "question": "Who wrote Noli Me Tangere?",
+        "submittedAnswer": "",
+        "correctAnswer": "Jose Rizal",
+        "scoreEarned": 0,
+        "points": 1
+      },
+      {
+        "question": "Which body of water separates Luzon from Taiwan?",
+        "submittedAnswer": "",
+        "correctAnswer": "Bashi Channel",
+        "scoreEarned": 0,
+        "points": 1
+      }
+    ]
+  }
+]
